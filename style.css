@@ -166,6 +166,10 @@ body {
     transition: transform var(--transition-fast);
 }
 
+.logo-icon img{
+    width:30px;
+}
+
 .logo:hover .logo-icon {
     transform: rotate(5deg);
 }
