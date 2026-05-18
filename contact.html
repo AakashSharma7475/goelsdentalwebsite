@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contact Goel's Dental Clinic | Panipat & Safidon</title>
+    <meta name="description" content="Contact Goel's Dental Clinic for appointments, inquiries, or emergencies. Visit us in Panipat or Safidon. Call 8708474796 today.">
+    <meta name="keywords" content="contact dentist Panipat, dental clinic contact, Goel Dental Clinic phone, emergency dental care">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://goelsdentalclinic.com/contact.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="components/images/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Contact Page Specific Styles -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes blobPulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        /* Global SVG styling */
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Button SVG styling */
+        .btn svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        /* Footer contact-item SVG styling */
+        .contact-item svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            min-width: 18px;
+            min-height: 18px;
+        }
+        
+        /* Contact info icon SVG */
+        .contact-info-icon svg {
+            display: block;
+            width: 32px;
+            height: 32px;
+        }
+        
+        /* Contact location icon SVG */
+        .contact-location-icon svg {
+            display: block;
+            width: 32px;
+            height: 32px;
+        }
+        
+        /* Contact location detail icon SVG */
+        .contact-location-detail-icon svg {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ========================================
+           CONTACT PAGE SPECIFIC STYLES
+           ======================================== */
+        
+        /* Page Hero Section */
+        .page-hero {
+            min-height: 50vh;
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--background) 0%, var(--white) 50%, rgba(42, 125, 225, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero-blob {
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: blobPulse 8s ease-in-out infinite;
+        }
+        
+        .page-hero-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 60px var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(42, 125, 225, 0.1);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s var(--transition-smooth) forwards;
+        }
+        
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+        
+        .page-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s var(--transition-smooth) 0.1s forwards;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .page-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(27, 43, 64, 0.7);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 0.6s var(--transition-smooth) 0.2s forwards;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* ========================================
+           CONTACT INFO CARDS SECTION
+           ======================================== */
+        
+        .contact-info-section {
+            background: var(--white);
+        }
+        
+        .contact-info-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .contact-info-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(27, 43, 64, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(27, 43, 64, 0.12);
+        }
+        
+        .contact-info-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.1) 100%);
+            border-radius: 50%;
+            color: var(--primary);
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .contact-info-icon svg {
+            width: 100%;
+            height: 100%;
+            max-width: 32px;
+            max-height: 32px;
+            display: block;
+        }
+        
+        .contact-info-card:hover .contact-info-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        
+        .contact-info-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+        
+        .contact-info-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(27, 43, 64, 0.65);
+            line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .contact-info-value a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info-value a:hover {
+            color: var(--primary-dark);
+        }
+        
+        /* ========================================
+           CONTACT FORM SECTION
+           ======================================== */
+        
+        .contact-form-section {
+            background: linear-gradient(180deg, var(--background) 0%, var(--white) 100%);
+        }
+        
+        .contact-form-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .contact-form-wrapper {
+            /* max-width: 900px; */
+            margin: 0 auto;
+            background: var(--white);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(27, 43, 64, 0.08);
+        }
+        
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        /* ========================================
+           LOCATIONS SECTION
+           ======================================== */
+        
+        .contact-locations-section {
+            background: var(--white);
+        }
+        
+        .contact-locations-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .contact-locations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        
+        .contact-location-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 8px 30px rgba(27, 43, 64, 0.08), 0 4px 12px rgba(42, 125, 225, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .contact-location-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(27, 43, 64, 0.12), 0 6px 20px rgba(42, 125, 225, 0.1);
+        }
+        
+        .contact-location-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid rgba(42, 125, 225, 0.08);
+        }
+        
+        .contact-location-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 14px;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        
+        .contact-location-icon svg {
+            width: 100%;
+            height: 100%;
+            max-width: 32px;
+            max-height: 32px;
+            display: block;
+        }
+        
+        .contact-location-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 4px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .contact-location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        
+        .contact-location-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .contact-location-detail-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(42, 125, 225, 0.06);
+            border-radius: 10px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .contact-location-detail-icon svg {
+            width: 100%;
+            height: 100%;
+            max-width: 20px;
+            max-height: 20px;
+            display: block;
+        }
+        
+        .contact-location-detail-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(27, 43, 64, 0.6);
+            margin-bottom: 4px;
+        }
+        
+        .contact-location-detail-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--dark-text);
+            font-weight: 500;
+            line-height: 1.5;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .contact-location-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-location-actions .btn {
+            flex: 1;
+            min-width: 140px;
+            justify-content: center;
+            padding: 14px 24px;
+            font-size: 0.95rem;
+        }
+        
+        /* ========================================
+           GOOGLE MAPS SECTION
+           ======================================== */
+        
+        .contact-maps-section {
+            background: linear-gradient(180deg, var(--background) 0%, var(--white) 100%);
+        }
+        
+        .contact-maps-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .contact-maps-wrapper {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(27, 43, 64, 0.08);
+        }
+        
+        .contact-map-iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+        
+        /* ========================================
+           QUICK CTA SECTION
+           ======================================== */
+        
+        .contact-cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-cta-blob {
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: blobPulse 10s ease-in-out infinite;
+        }
+        
+        .contact-cta-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-cta-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .contact-cta-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .contact-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-cta-buttons .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-cta-buttons .btn-primary:hover {
+            background: var(--background);
+            transform: scale(1.05);
+        }
+        
+        .contact-cta-buttons .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .contact-cta-buttons .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        
+        @media (max-width: 1024px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-locations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-cta-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 40vh;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form-wrapper {
+                padding: 32px 24px;
+            }
+            
+            .contact-location-card {
+                padding: 32px 24px;
+            }
+            
+            .contact-map-iframe {
+                height: 350px;
+            }
+            
+            .contact-cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-cta-text {
+                font-size: 1rem;
+            }
+            
+            .contact-location-actions {
+                flex-direction: column;
+            }
+            
+            .contact-location-actions .btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.75rem;
+            }
+            
+            .page-badge {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+            
+            .contact-location-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+    
+    <!-- Include Script -->
+    <script src="js/include.js"></script>
+    <script src="js/appointment-form.js"></script>
+</head>
+<body>
+    <!-- Navbar injected here -->
+    <div id="navbar"></div>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="page-hero" id="home">
+        <div class="page-hero-blob"></div>
+        
+        <div class="page-hero-container">
+            <div class="page-badge">
+                <span class="badge-dot"></span>
+                Get In Touch
+            </div>
+            
+            <h1 class="page-title">Contact Goel's Dental Clinic</h1>
+            
+            <p class="page-subtitle">
+                We are here to help you with your dental care needs
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT INFO CARDS SECTION
+         ======================================== -->
+    <section class="contact-info-section section-spacing" id="contact-info">
+        <div class="contact-info-container">
+            <div class="locations-header">
+                <h2 class="locations-title">How to Reach Us</h2>
+                <p class="locations-subtitle">Choose the most convenient way to contact us</p>
+            </div>
+            
+            <div class="contact-info-grid">
+                <!-- Phone Number -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-info-title">Phone Number</h3>
+                    <p class="contact-info-value"><a href="tel:8708474796">8708474796</a></p>
+                </div>
+                
+                <!-- Email Address -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-info-title">Email Address</h3>
+                    <p class="contact-info-value"><a href="mailto:goelpulkit101@gmail.com">goelpulkit101@gmail.com</a></p>
+                </div>
+                
+                <!-- Working Hours -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-info-title">Working Hours</h3>
+                    <p class="contact-info-value">10:00 AM – 11:00 PM (7 Days)</p>
+                </div>
+                
+                <!-- Emergency Dental Support -->
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <h3 class="contact-info-title">Emergency Support</h3>
+                    <p class="contact-info-value">Call us for urgent dental care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT FORM SECTION
+         ======================================== -->
+    <section class="contact-form-section section-spacing" id="contact-form">
+        <div class="contact-form-container">
+            <div class="locations-header">
+                <h2 class="locations-title">Send Us a Message</h2>
+                <p class="locations-subtitle">We'll get back to you as soon as possible</p>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <form class="appointment-form js-appointment-form" data-form-type="contact-page" novalidate>
+                    <div class="appointment-form-grid">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required>
+                            <div class="field-error" data-error-for="fullName"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <div class="phone-input-group">
+                                <select id="countryCode" name="countryCode" class="form-select country-code-select" required>
+                                    <option value="+91" data-country="IN" selected>IN +91</option>
+                                    <option value="+1" data-country="US">US +1</option>
+                                    <option value="+44" data-country="GB">UK +44</option>
+                                    <option value="+971" data-country="AE">UAE +971</option>
+                                    <option value="+61" data-country="AU">AU +61</option>
+                                    <option value="+1" data-country="CA">CA +1</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" class="form-input phone-number-input" placeholder="Enter mobile number" inputmode="numeric" autocomplete="tel-national" required>
+                            </div>
+                            <div class="field-error" data-error-for="phone"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                            <div class="field-error" data-error-for="email"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clinicLocation" class="form-label">Select Clinic Location</label>
+                            <select id="clinicLocation" name="clinicLocation" class="form-select" required>
+                                <option value="">Choose a clinic</option>
+                                <option value="panipat">Panipat Clinic</option>
+                                <option value="safidon">Safidon Clinic</option>
+                            </select>
+                            <div class="field-error" data-error-for="clinicLocation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="treatment" class="form-label">Select Treatment</label>
+                            <select id="treatment" name="treatment" class="form-select" required>
+                                <option value="">Choose a treatment</option>
+                                <option value="implants">Dental Implants</option>
+                                <option value="rct">Root Canal Treatment</option>
+                                <option value="smile-design">Smile Designing</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="braces">Braces & Aligners</option>
+                                <option value="crown-bridge">Crown & Bridge</option>
+                                <option value="pediatric">Pediatric Dentistry</option>
+                                <option value="cosmetic">Cosmetic Dentistry</option>
+                                <option value="emergency">Emergency Dental Care</option>
+                            </select>
+                            <div class="field-error" data-error-for="treatment"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date" class="form-label">Preferred Date</label>
+                            <input type="date" id="date" name="date" class="form-input" required>
+                            <div class="field-error" data-error-for="date"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeSlot" class="form-label">Preferred Time Slot</label>
+                            <select id="timeSlot" name="timeSlot" class="form-select" required>
+                                <option value="">Choose a time slot</option>
+                                <option value="morning">Morning (10 AM - 1 PM)</option>
+                                <option value="afternoon">Afternoon (1 PM - 5 PM)</option>
+                                <option value="evening">Evening (5 PM - 11 PM)</option>
+                            </select>
+                            <div class="field-error" data-error-for="timeSlot"></div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message" class="form-label">Message / Symptoms</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your dental concerns or symptoms"></textarea>
+                            <div class="field-error" data-error-for="message"></div>
+                        </div>
+
+                        <input type="hidden" name="doctorEmail" value="sharmaaakash7475@gmail.com">
+                        
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <span>Book Appointment</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            <div class="form-status-message" role="status" aria-live="polite"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CLINIC LOCATIONS SECTION
+         ======================================== -->
+    <section class="contact-locations-section section-spacing" id="clinic-locations">
+        <div class="contact-locations-container">
+            <div class="locations-header">
+                <h2 class="locations-title">Our Clinic Locations</h2>
+                <p class="locations-subtitle">Visit us at our conveniently located clinics</p>
+            </div>
+            
+            <div class="contact-locations-grid">
+                <!-- Panipat Clinic -->
+                <div class="contact-location-card">
+                    <div class="contact-location-header">
+                        <div class="contact-location-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-location-title">Goel's Dental Clinic</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-location-details">
+                        <div class="contact-location-detail-item">
+                            <div class="contact-location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="detail-content">
+                                <p class="contact-location-detail-label">Address</p>
+                                <p class="contact-location-detail-value">212-R, Model Town, Panipat, Haryana</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-location-detail-item">
+                            <div class="contact-location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <div class="detail-content">
+                                <p class="contact-location-detail-label">Consultation Fee</p>
+                                <p class="contact-location-detail-value">₹300</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-location-actions">
+                        <a href="https://www.google.com/maps/@29.3910327,76.9636503,17z?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary" rel="noopener noreferrer" aria-label="Open Panipat Clinic location in Google Maps">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                        <a href="tel:8708474796" class="btn btn-secondary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Safidon Clinic -->
+                <div class="contact-location-card">
+                    <div class="contact-location-header">
+                        <div class="contact-location-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-location-title">Maa Bhago Devi Hospital</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-location-details">
+                        <div class="contact-location-detail-item">
+                            <div class="contact-location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="detail-content">
+                                <p class="contact-location-detail-label">Address</p>
+                                <p class="contact-location-detail-value">Maa Bhago Devi Hospital, Safidon, Haryana</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-location-detail-item">
+                            <div class="contact-location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                            </div>
+                            <div class="detail-content">
+                                <p class="contact-location-detail-label">Consultation Fee</p>
+                                <p class="contact-location-detail-value">₹100</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-location-actions">
+                        <a href="https://www.google.com/maps/search/maa+bhago+devi+hospital+safidon/@29.4025946,76.6555679,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary" rel="noopener noreferrer" aria-label="Open Safidon Clinic location in Google Maps">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                        <a href="tel:8708474796" class="btn btn-secondary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GOOGLE MAPS SECTION
+         ======================================== -->
+    <section class="contact-maps-section section-spacing" id="maps">
+        <div class="contact-maps-container">
+            <div class="locations-header">
+                <h2 class="locations-title">Find Us on Google Maps</h2>
+                <p class="locations-subtitle">Get directions to our clinics easily</p>
+            </div>
+            
+            <div class="contact-maps-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1741.794!2d76.9636503!3d29.3910327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s212-R%2C%20Model%20Town%2C%20Panipat%2C%20Haryana!5e0!3m2!1sen!2sin" class="contact-map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Goel's Dental Clinic Panipat Location"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         QUICK CTA SECTION
+         ======================================== -->
+    <section class="contact-cta-section section-spacing" id="quick-cta">
+        <div class="contact-cta-blob"></div>
+        <div class="contact-cta-container">
+            <h2 class="contact-cta-title">Need Immediate Dental Assistance?</h2>
+            <p class="contact-cta-text">Our team is ready to assist you with urgent dental care.</p>
+            <div class="contact-cta-buttons">
+                <a href="tel:8708474796" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <span>Call Now</span>
+                </a>
+                <a href="appointment.html" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>Book Appointment</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER SECTION
+         ======================================== -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Column 1: About Clinic -->
+                <div class="footer-column">
+                    <h3 class="footer-logo">Goel's Dental Clinic</h3>
+                    <p class="footer-doctor">Dr. Pulkit Goel</p>
+                    <p class="footer-description">Advanced painless dental care in Panipat & Safidon with modern technology and patient-first approach.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/goel_dentalclinic_panipat?igsh=MWtvYjdzeTBvd3ptaw==" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/918708474796" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="location.html" class="footer-link">Locations</a></li>
+                        <li><a href="appointment.html" class="footer-link">Book Appointment</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Locations -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Our Locations</h4>
+                    <div class="footer-location">
+                        <p class="location-name">Panipat Clinic</p>
+                        <p class="location-address">212-R, Model Town, Panipat</p>
+                        <a href="https://www.google.com/maps/@29.3910327,76.9636503,17z?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank" rel="noopener noreferrer" aria-label="Open Panipat Clinic location in Google Maps">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                    <div class="footer-location">
+                        <p class="location-name">Safidon Clinic</p>
+                        <p class="location-address">Maa Bhago Devi Hospital, Safidon</p>
+                        <a href="https://www.google.com/maps/search/maa+bhago+devi+hospital+safidon/@29.4025946,76.6555679,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank" rel="noopener noreferrer" aria-label="Open Safidon Clinic location in Google Maps">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Contact Info -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>8708474796</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>goelpulkit101@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>10:00 AM – 11:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 Goel's Dental Clinic. All rights reserved.</p>
+                <p class="footer-tagline">Advanced Dental Care for a Healthy Smile</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

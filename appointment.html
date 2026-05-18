@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Book Appointment - Goel's Dental Clinic | Panipat & Safidon</title>
+    <meta name="description" content="Book your dental appointment at Goel's Dental Clinic in Panipat or Safidon. Schedule consultations for implants, RCT, cosmetic dentistry and more.">
+    <meta name="keywords" content="book dental appointment, dentist Panipat, Safidon dental clinic, dental consultation booking">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://goelsdentalclinic.com/appointment.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="components/images/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Appointment Page Specific Styles -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes blobPulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        /* Global SVG styling */
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Button SVG styling */
+        .btn svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        /* Footer contact-item SVG styling */
+        .contact-item svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            min-width: 18px;
+            min-height: 18px;
+        }
+
+        /* ========================================
+           APPOINTMENT PAGE SPECIFIC STYLES
+           ======================================== */
+        
+        /* Page Hero Section */
+        .appointment-hero {
+            min-height: 50vh;
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--background) 0%, var(--white) 50%, rgba(42, 125, 225, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .appointment-hero-blob {
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: blobPulse 8s ease-in-out infinite;
+        }
+        
+        .appointment-hero-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 60px var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .appointment-hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+            animation: fadeInUp 0.6s var(--transition-smooth) forwards;
+        }
+        
+        .appointment-hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(27, 43, 64, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 0.6s var(--transition-smooth) 0.1s forwards;
+        }
+        
+        /* Appointment Form Section */
+        .appointment-form-section {
+            background: linear-gradient(180deg, var(--background) 0%, var(--white) 100%);
+        }
+        
+        .appointment-form-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .appointment-form-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(27, 43, 64, 0.08);
+        }
+        
+        .appointment-form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark-text);
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 14px 18px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--dark-text);
+            background: var(--white);
+            border: 2px solid var(--gray-light);
+            border-radius: 12px;
+            transition: all 0.3s var(--transition-smooth);
+            outline: none;
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(42, 125, 225, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-full {
+            width: 100%;
+            margin-top: 8px;
+        }
+        
+        /* Appointment Info Section */
+        .appointment-info-section {
+            background: var(--white);
+        }
+        
+        .appointment-info-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .appointment-info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .appointment-info-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(27, 43, 64, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .appointment-info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(27, 43, 64, 0.12);
+        }
+        
+        .appointment-info-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.1) 100%);
+            border-radius: 50%;
+            color: var(--primary);
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .appointment-info-card:hover .appointment-info-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        
+        .appointment-info-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+        
+        .appointment-info-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(27, 43, 64, 0.65);
+            line-height: 1.6;
+        }
+        
+        /* Working Hours Section */
+        .working-hours-section {
+            background: linear-gradient(180deg, var(--background) 0%, var(--white) 100%);
+        }
+        
+        .working-hours-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .working-hours-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .working-hours-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(27, 43, 64, 0.08), 0 4px 12px rgba(42, 125, 225, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .working-hours-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(27, 43, 64, 0.12), 0 6px 20px rgba(42, 125, 225, 0.1);
+        }
+        
+        .working-hours-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            color: var(--white);
+        }
+        
+        .working-hours-clinic {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+        
+        .working-hours-time {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .working-hours-days {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(27, 43, 64, 0.65);
+        }
+        
+        /* Why Book With Us Section */
+        .why-book-section {
+            background: var(--white);
+        }
+        
+        .why-book-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .why-book-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .why-book-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: 0 4px 20px rgba(27, 43, 64, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+        }
+        
+        .why-book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(27, 43, 64, 0.12);
+        }
+        
+        .why-book-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.1) 100%);
+            border-radius: 14px;
+            color: var(--primary);
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .why-book-card:hover .why-book-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        
+        .why-book-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+        
+        .why-book-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(27, 43, 64, 0.65);
+            line-height: 1.6;
+        }
+        
+        /* Emergency CTA Section */
+        .emergency-cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .emergency-cta-blob {
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: blobPulse 10s ease-in-out infinite;
+        }
+        
+        .emergency-cta-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .emergency-cta-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        
+        .emergency-cta-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+        }
+        
+        .emergency-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .emergency-cta-buttons .btn {
+            padding: 14px 32px;
+            font-size: 1rem;
+        }
+        
+        .emergency-cta-buttons .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        .emergency-cta-buttons .btn-primary:hover {
+            background: var(--background);
+            transform: scale(1.05);
+        }
+        
+        .emergency-cta-buttons .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+        
+        .emergency-cta-buttons .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+        
+        .section-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: rgba(27, 43, 64, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        @media (max-width: 1024px) {
+            .appointment-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .why-book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .appointment-hero-title {
+                font-size: 2rem;
+            }
+            
+            .appointment-hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .appointment-form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .appointment-form-wrapper {
+                padding: 32px 24px;
+            }
+            
+            .working-hours-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .appointment-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .why-book-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .emergency-cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .emergency-cta-buttons {
+                flex-direction: column;
+            }
+            
+            .emergency-cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Reusable Component) -->
+    <div id="navbar"></div>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="appointment-hero" id="hero">
+        <div class="appointment-hero-blob"></div>
+        <div class="appointment-hero-container">
+            <h1 class="appointment-hero-title">Book Your Appointment</h1>
+            <p class="appointment-hero-subtitle">Schedule your dental consultation with ease</p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         APPOINTMENT FORM SECTION
+         ======================================== -->
+    <section class="appointment-form-section section-spacing" id="appointment-form">
+        <div class="appointment-form-container">
+            <div class="section-header">
+                <h2 class="section-title">Fill in Your Details</h2>
+                <p class="section-subtitle">We'll get back to you shortly to confirm your appointment</p>
+            </div>
+            
+            <div class="appointment-form-wrapper">
+                <form id="bookingForm" class="js-appointment-form" data-form-type="appointment-page" novalidate>
+                    <div class="appointment-form-grid">
+                        <div class="form-group">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required>
+                            <div class="field-error" data-error-for="fullName"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <div class="phone-input-group">
+                                <select id="countryCode" name="countryCode" class="form-select country-code-select" required>
+                                    <option value="+91" data-country="IN" selected>IN +91</option>
+                                    <option value="+1" data-country="US">US +1</option>
+                                    <option value="+44" data-country="GB">UK +44</option>
+                                    <option value="+971" data-country="AE">UAE +971</option>
+                                    <option value="+61" data-country="AU">AU +61</option>
+                                    <option value="+1" data-country="CA">CA +1</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" class="form-input phone-number-input" placeholder="Enter mobile number" inputmode="numeric" autocomplete="tel-national" required>
+                            </div>
+                            <div class="field-error" data-error-for="phone"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                            <div class="field-error" data-error-for="email"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="clinicLocation" class="form-label">Select Clinic Location</label>
+                            <select id="clinicLocation" name="clinicLocation" class="form-select" required>
+                                <option value="">Choose a clinic</option>
+                                <option value="panipat">Panipat Clinic</option>
+                                <option value="safidon">Safidon Clinic</option>
+                            </select>
+                            <div class="field-error" data-error-for="clinicLocation"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="treatment" class="form-label">Select Treatment</label>
+                            <select id="treatment" name="treatment" class="form-select" required>
+                                <option value="">Choose a treatment</option>
+                                <option value="implants">Dental Implants</option>
+                                <option value="rct">Root Canal Treatment</option>
+                                <option value="smile-design">Smile Designing</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="braces">Braces & Aligners</option>
+                                <option value="crown-bridge">Crown & Bridge</option>
+                                <option value="pediatric">Pediatric Dentistry</option>
+                                <option value="cosmetic">Cosmetic Dentistry</option>
+                                <option value="emergency">Emergency Dental Care</option>
+                            </select>
+                            <div class="field-error" data-error-for="treatment"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date" class="form-label">Preferred Date</label>
+                            <input type="date" id="date" name="date" class="form-input" required>
+                            <div class="field-error" data-error-for="date"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeSlot" class="form-label">Preferred Time Slot</label>
+                            <select id="timeSlot" name="timeSlot" class="form-select" required>
+                                <option value="">Choose a time slot</option>
+                                <option value="morning">Morning (10 AM - 1 PM)</option>
+                                <option value="afternoon">Afternoon (1 PM - 5 PM)</option>
+                                <option value="evening">Evening (5 PM - 11 PM)</option>
+                            </select>
+                            <div class="field-error" data-error-for="timeSlot"></div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message" class="form-label">Message / Symptoms</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your dental concerns or symptoms"></textarea>
+                            <div class="field-error" data-error-for="message"></div>
+                        </div>
+                        
+                        <input type="hidden" name="doctorEmail" value="sharmaaakash7475@gmail.com">
+
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <span>Book Appointment</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            <div class="form-status-message" role="status" aria-live="polite"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         APPOINTMENT INFO SECTION
+         ======================================== -->
+    <section class="appointment-info-section section-spacing" id="appointment-info">
+        <div class="appointment-info-container">
+            <div class="appointment-info-grid">
+                <!-- Instant Confirmation -->
+                <div class="appointment-info-card">
+                    <div class="appointment-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="appointment-info-title">Instant Confirmation</h3>
+                    <p class="appointment-info-desc">Get quick response to confirm your booking</p>
+                </div>
+                
+                <!-- 7 Days Availability -->
+                <div class="appointment-info-card">
+                    <div class="appointment-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="appointment-info-title">7 Days Availability</h3>
+                    <p class="appointment-info-desc">Open all days including weekends</p>
+                </div>
+                
+                <!-- Experienced Dental Care -->
+                <div class="appointment-info-card">
+                    <div class="appointment-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l10 4-10 4-10-4z"/>
+                            <path d="M2 10l10 5 10-5"/>
+                            <path d="M2 18l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="appointment-info-title">Experienced Care</h3>
+                    <p class="appointment-info-desc">4+ years of clinical expertise</p>
+                </div>
+                
+                <!-- Emergency Appointment -->
+                <div class="appointment-info-card">
+                    <div class="appointment-info-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 9v4"/>
+                            <path d="M12 17h.01"/>
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="appointment-info-title">Emergency Slots</h3>
+                    <p class="appointment-info-desc">Priority appointments available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WORKING HOURS SECTION
+         ======================================== -->
+    <section class="working-hours-section section-spacing" id="working-hours">
+        <div class="working-hours-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Working Hours</h2>
+                <p class="section-subtitle">Visit us at your convenience</p>
+            </div>
+            
+            <div class="working-hours-grid">
+                <!-- Panipat Clinic -->
+                <div class="working-hours-card">
+                    <div class="working-hours-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="working-hours-clinic">Panipat Clinic</h3>
+                    <p class="working-hours-time">10:00 AM – 11:00 PM</p>
+                    <p class="working-hours-days">7 Days a Week</p>
+                </div>
+                
+                <!-- Safidon Clinic -->
+                <div class="working-hours-card">
+                    <div class="working-hours-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="working-hours-clinic">Safidon Clinic</h3>
+                    <p class="working-hours-time">10:00 AM – 11:00 PM</p>
+                    <p class="working-hours-days">7 Days a Week</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WHY BOOK WITH US SECTION
+         ======================================== -->
+    <section class="why-book-section section-spacing" id="why-book">
+        <div class="why-book-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Book With Us?</h2>
+                <p class="section-subtitle">Experience the difference in dental care</p>
+            </div>
+            
+            <div class="why-book-grid">
+                <!-- Painless Treatment -->
+                <div class="why-book-card">
+                    <div class="why-book-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <circle cx="9" cy="9" r="1"/>
+                            <circle cx="15" cy="9" r="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-book-title">Painless Treatment</h3>
+                    <p class="why-book-desc">Modern techniques for comfortable procedures</p>
+                </div>
+                
+                <!-- Advanced Technology -->
+                <div class="why-book-card">
+                    <div class="why-book-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-book-title">Advanced Technology</h3>
+                    <p class="why-book-desc">Latest equipment for accurate diagnosis</p>
+                </div>
+                
+                <!-- Expert Consultation -->
+                <div class="why-book-card">
+                    <div class="why-book-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-book-title">Expert Consultation</h3>
+                    <p class="why-book-desc">Personalized treatment plans</p>
+                </div>
+                
+                <!-- Modern Dental Care -->
+                <div class="why-book-card">
+                    <div class="why-book-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C7 2 3 6 3 11c0 2.5 1 4.5 2.5 6L12 22l6.5-5c1.5-1.5 2.5-3.5 2.5-6 0-5-4-9-9-9z"/>
+                            <path d="M12 7v4M12 15h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-book-title">Modern Dental Care</h3>
+                    <p class="why-book-desc">Comprehensive dental solutions</p>
+                </div>
+                
+                <!-- Affordable Pricing -->
+                <div class="why-book-card">
+                    <div class="why-book-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-book-title">Affordable Pricing</h3>
+                    <p class="why-book-desc">Transparent and budget-friendly</p>
+                </div>
+                
+                <!-- Fast Response -->
+                <div class="why-book-card">
+                    <div class="why-book-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-book-title">Fast Response</h3>
+                    <p class="why-book-desc">Quick to confirm your booking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         EMERGENCY CTA SECTION
+         ======================================== -->
+    <section class="emergency-cta-section section-spacing" id="emergency">
+        <div class="emergency-cta-blob"></div>
+        <div class="emergency-cta-container">
+            <h2 class="emergency-cta-title">Need Emergency Dental Care?</h2>
+            <p class="emergency-cta-text">Don't wait - contact us immediately for urgent dental issues</p>
+            <div class="emergency-cta-buttons">
+                <a href="tel:8708474796" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/918708474796" target="_blank" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span>WhatsApp Support</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER SECTION
+         ======================================== -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Column 1: About Clinic -->
+                <div class="footer-column">
+                    <h3 class="footer-logo">Goel's Dental Clinic</h3>
+                    <p class="footer-doctor">Dr. Pulkit Goel</p>
+                    <p class="footer-description">Advanced painless dental care in Panipat & Safidon with modern technology and patient-first approach.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/goel_dentalclinic_panipat?igsh=MWtvYjdzeTBvd3ptaw==" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/918708474796" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="location.html" class="footer-link">Locations</a></li>
+                        <li><a href="appointment.html" class="footer-link">Book Appointment</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Locations -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Our Locations</h4>
+                    <div class="footer-location">
+                        <p class="location-name">Panipat Clinic</p>
+                        <p class="location-address">212-R, Model Town, Panipat</p>
+                        <a href="https://www.google.com/maps/@29.3910327,76.9636503,17z?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank" rel="noopener noreferrer" aria-label="Open Panipat Clinic location in Google Maps">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                    <div class="footer-location">
+                        <p class="location-name">Safidon Clinic</p>
+                        <p class="location-address">Maa Bhago Devi Hospital, Safidon</p>
+                        <a href="https://www.google.com/maps/search/maa+bhago+devi+hospital+safidon/@29.4025946,76.6555679,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank" rel="noopener noreferrer" aria-label="Open Safidon Clinic location in Google Maps">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Contact Info -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <span>8708474796</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>goelpulkit101@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>10 AM – 11 PM (7 Days)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Goel's Dental Clinic. All Rights Reserved.</p>
+                <p class="footer-tagline">Designed for advanced dental care in Haryana</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Script -->
+    <script src="js/include.js"></script>
+    <script src="js/appointment-form.js"></script>
+</body>
+</html>

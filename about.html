@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>About Goel's Dental Clinic | Dr. Pulkit Goel - Best Dentist in Panipat</title>
+    <meta name="description" content="Learn about Goel's Dental Clinic and Dr. Pulkit Goel (BDS, MDS Oral Implantologist). 4+ years of experience in advanced dental care. Clinics in Panipat & Safidon.">
+    <meta name="keywords" content="about Goel's Dental Clinic, Dr. Pulkit Goel dentist, dental clinic Panipat about, oral implantologist Haryana">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://goelsdentalclinic.com/about.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="components/images/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- About Page Specific Styles -->
+    <style>
+        /* ========================================
+           ABOUT PAGE SPECIFIC STYLES
+           ======================================== */
+        
+        /* Page Hero Section */
+        .page-hero {
+            min-height: 50vh;
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--background) 0%, var(--white) 50%, rgba(42, 125, 225, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero-blob {
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: blobPulse 8s ease-in-out infinite;
+        }
+        
+        .page-hero-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 60px var(--container-padding);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(42, 125, 225, 0.1);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s var(--transition-smooth) forwards;
+        }
+        
+        .page-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s var(--transition-smooth) 0.1s forwards;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .page-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(27, 43, 64, 0.7);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 0.6s var(--transition-smooth) 0.2s forwards;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* ========================================
+           DOCTOR PROFILE SECTION
+           ======================================== */
+        
+        .doctor-profile-section {
+            background: var(--white);
+        }
+        
+        .doctor-profile-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .doctor-profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        /* Doctor Image */
+        .doctor-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .doctor-blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(42, 125, 225, 0.12) 0%, rgba(32, 196, 161, 0.06) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: blobPulse 8s ease-in-out infinite;
+        }
+        
+        .doctor-image-box {
+            position: relative;
+            z-index: 1;
+            max-width: 400px;
+            width: 100%;
+            animation: imageLoad 1s var(--transition-smooth) forwards;
+        }
+        
+        .doctor-image-box img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            border-radius: 20px;
+            object-fit: cover;
+            object-position: center top;
+            box-shadow: 0 25px 60px rgba(27, 43, 64, 0.15), 0 10px 30px rgba(42, 125, 225, 0.1);
+            transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+        }
+        
+        .doctor-image-box:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 30px 70px rgba(27, 43, 64, 0.18), 0 12px 35px rgba(42, 125, 225, 0.15);
+        }
+        
+        /* Doctor Info */
+        .doctor-info-content {
+            padding: 20px 0;
+        }
+        
+        .doctor-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .doctor-qualification {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        
+        .doctor-experience-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(42, 125, 225, 0.1);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        
+        .doctor-bio {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: rgba(27, 43, 64, 0.75);
+            line-height: 1.8;
+            margin-bottom: 28px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .doctor-cta .btn {
+            padding: 14px 32px;
+            font-size: 1rem;
+        }
+        
+        /* ========================================
+           MISSION & VISION SECTION
+           ======================================== */
+        
+        .mission-vision-section {
+            background: linear-gradient(180deg, var(--background) 0%, var(--white) 100%);
+        }
+        
+        .mission-vision-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .mission-vision-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .mission-vision-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .mission-vision-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(27, 43, 64, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        
+        .mv-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 8px 30px rgba(27, 43, 64, 0.08), 0 4px 12px rgba(42, 125, 225, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.6s var(--transition-smooth) forwards;
+        }
+        
+        .mv-card:nth-child(1) { animation-delay: 0.1s; }
+        .mv-card:nth-child(2) { animation-delay: 0.2s; }
+        
+        .mv-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(27, 43, 64, 0.12), 0 6px 20px rgba(42, 125, 225, 0.1);
+        }
+        
+        .mv-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            color: var(--white);
+        }
+        
+        .mv-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+        }
+        
+        .mv-card-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(27, 43, 64, 0.7);
+            line-height: 1.7;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* ========================================
+           WHY CHOOSE US SECTION
+           ======================================== */
+        
+        .why-choose-section {
+            background: var(--white);
+        }
+        
+        .why-choose-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .why-choose-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .why-choose-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .why-choose-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(27, 43, 64, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .why-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(27, 43, 64, 0.06);
+            transition: all 0.4s var(--transition-smooth);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.6s var(--transition-smooth) forwards;
+        }
+        
+        .why-card:nth-child(1) { animation-delay: 0.05s; }
+        .why-card:nth-child(2) { animation-delay: 0.1s; }
+        .why-card:nth-child(3) { animation-delay: 0.15s; }
+        .why-card:nth-child(4) { animation-delay: 0.2s; }
+        .why-card:nth-child(5) { animation-delay: 0.25s; }
+        .why-card:nth-child(6) { animation-delay: 0.3s; }
+        
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(27, 43, 64, 0.12);
+        }
+        
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(42, 125, 225, 0.1) 0%, rgba(32, 196, 161, 0.1) 100%);
+            border-radius: 50%;
+            color: var(--primary);
+            transition: all 0.3s var(--transition-smooth);
+        }
+        
+        .why-card:hover .why-icon {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        
+        .why-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+        
+        .why-card-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(27, 43, 64, 0.65);
+            line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* ========================================
+           STATS SECTION
+           ======================================== */
+        
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-blob {
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: blobPulse 10s ease-in-out infinite;
+        }
+        
+        .stats-container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: var(--white);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.6s var(--transition-smooth) forwards;
+        }
+        
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* ========================================
+           RESPONSIVE STYLES
+           ======================================== */
+        
+        @media (max-width: 1024px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .doctor-profile-grid {
+                gap: 50px;
+            }
+            
+            .doctor-name {
+                font-size: 2rem;
+            }
+            
+            .doctor-blob {
+                width: 360px;
+                height: 360px;
+            }
+            
+            .mission-vision-title,
+            .why-choose-title {
+                font-size: 2.2rem;
+            }
+            
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero {
+                min-height: 40vh;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+            
+            .doctor-profile-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .doctor-image-wrapper {
+                order: -1;
+            }
+            
+            .doctor-blob {
+                width: 320px;
+                height: 320px;
+            }
+            
+            .doctor-image-box {
+                max-width: 300px;
+            }
+            
+            .doctor-name {
+                font-size: 1.75rem;
+            }
+            
+            .doctor-qualification {
+                font-size: 1.1rem;
+            }
+            
+            .doctor-bio {
+                font-size: 1rem;
+            }
+            
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .mv-card {
+                padding: 32px 24px;
+            }
+            
+            .mission-vision-title,
+            .why-choose-title {
+                font-size: 1.8rem;
+            }
+            
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .why-card {
+                padding: 28px 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.75rem;
+            }
+            
+            .page-badge {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+            
+            .doctor-blob {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .doctor-image-box {
+                max-width: 260px;
+            }
+            
+            .doctor-name {
+                font-size: 1.5rem;
+            }
+            
+            .mission-vision-title,
+            .why-choose-title {
+                font-size: 1.6rem;
+            }
+            
+            .mv-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .mv-card-title {
+                font-size: 1.3rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    
+    <!-- Include Script -->
+    <script src="js/include.js"></script>
+</head>
+<body>
+    <!-- Navbar injected here -->
+    <div id="navbar"></div>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="page-hero" id="home">
+        <div class="page-hero-blob"></div>
+        
+        <div class="page-hero-container">
+            <div class="page-badge">
+                <span class="badge-dot"></span>
+                Trusted Dental Care
+            </div>
+            
+            <h1 class="page-title">About Goel's Dental Clinic</h1>
+            
+            <p class="page-subtitle">
+                Dedicated to providing advanced, painless, and patient-friendly dental care 
+                with modern technology and a commitment to excellence.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         DOCTOR PROFILE SECTION
+         ======================================== -->
+    <section class="doctor-profile-section section-spacing" id="doctor">
+        <div class="doctor-profile-container">
+            <div class="doctor-profile-grid">
+                <!-- Doctor Image -->
+                <div class="doctor-image-wrapper">
+                    <div class="doctor-blob"></div>
+                    <div class="doctor-image-box">
+                        <img src="components/images/d2.jpeg" alt="Dr. Pulkit Goel - BDS MDS Oral Implantologist at Goel's Dental Clinic" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- Doctor Info -->
+                <div class="doctor-info-content">
+                    <h2 class="doctor-name">Dr. Pulkit Goel</h2>
+                    <p class="doctor-qualification">BDS, MDS Oral Implantologist</p>
+                    
+                    <div class="doctor-experience-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        4+ Years Experience
+                    </div>
+                    
+                    <p class="doctor-bio">
+                        Dr. Pulkit Goel is a skilled dental surgeon and oral implantologist with a focus on advanced, 
+                        painless, and modern dental treatments. With over 4 years of clinical experience, he has 
+                        successfully treated thousands of patients in Panipat and Safidon. His expertise spans dental 
+                        implants, root canal treatments, cosmetic dentistry, and complex oral surgeries. 
+                        <br><br>
+                        Dr. Goel believes in patient-centered care, ensuring every treatment is comfortable, 
+                        effective, and tailored to individual needs. He continuously updates his skills with 
+                        the latest advancements in dental technology.
+                    </p>
+                    
+                    <div class="doctor-cta">
+                        <a href="appointment.html" class="btn btn-primary">
+                            <span>Book Appointment</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         MISSION & VISION SECTION
+         ======================================== -->
+    <section class="mission-vision-section section-spacing" id="mission">
+        <div class="mission-vision-container">
+            <div class="mission-vision-header">
+                <h2 class="mission-vision-title">Our Mission & Vision</h2>
+                <p class="mission-vision-subtitle">Guided by purpose, driven by care</p>
+            </div>
+            
+            <div class="mission-vision-grid">
+                <!-- Mission Card -->
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h3 class="mv-card-title">Our Mission</h3>
+                    <p class="mv-card-text">
+                        To deliver high-quality, painless dental care using modern technology with a focus on 
+                        comfort, precision, and long-term oral health. We aim to make every patient feel 
+                        at ease while achieving their best smile.
+                    </p>
+                </div>
+                
+                <!-- Vision Card -->
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="mv-card-title">Our Vision</h3>
+                    <p class="mv-card-text">
+                        To become the most trusted dental care provider in Haryana, recognized for excellence, 
+                        innovation, and patient satisfaction. We envision a community where everyone has 
+                        access to world-class dental care.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         WHY CHOOSE US SECTION
+         ======================================== -->
+    <section class="why-choose-section section-spacing" id="why-choose">
+        <div class="why-choose-container">
+            <div class="why-choose-header">
+                <h2 class="why-choose-title">Why Choose Us</h2>
+                <p class="why-choose-subtitle">Experience the difference with our patient-first approach</p>
+            </div>
+            
+            <div class="why-choose-grid">
+                <!-- Card 1 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Advanced Technology</h3>
+                    <p class="why-card-desc">State-of-the-art dental equipment and digital imaging for precise diagnosis and treatment.</p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Painless Treatments</h3>
+                    <p class="why-card-desc">Modern anesthesia techniques and gentle procedures ensure a comfortable experience.</p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Expert Care</h3>
+                    <p class="why-card-desc">Highly qualified MDS specialist with expertise in implants, cosmetics, and complex procedures.</p>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Affordable Pricing</h3>
+                    <p class="why-card-desc">Transparent, competitive pricing with no hidden costs. Quality care within your budget.</p>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">7 Days Availability</h3>
+                    <p class="why-card-desc">Extended hours 10 AM - 11 PM, all 7 days a week. We're here when you need us.</p>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3 class="why-card-title">Modern Clinic Setup</h3>
+                    <p class="why-card-desc">Hygienic, comfortable environment with strict sterilization protocols for your safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         STATS SECTION
+         ======================================== -->
+    <section class="stats-section section-spacing" id="stats">
+        <div class="stats-blob"></div>
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1500+</div>
+                    <div class="stat-label">Happy Patients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Treatments Done</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER SECTION (Pasted from index.html)
+         ======================================== -->
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Column 1: About Clinic -->
+                <div class="footer-column">
+                    <h3 class="footer-logo">Goel's Dental Clinic</h3>
+                    <p class="footer-doctor">Dr. Pulkit Goel</p>
+                    <p class="footer-description">Advanced painless dental care in Panipat & Safidon with modern technology and patient-first approach.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/goel_dentalclinic_panipat?igsh=MWtvYjdzeTBvd3ptaw==" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/918708474796" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="location.html" class="footer-link">Locations</a></li>
+                        <li><a href="appointment.html" class="footer-link">Book Appointment</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Locations -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Our Locations</h4>
+                    <div class="footer-location">
+                        <p class="location-name">Panipat Clinic</p>
+                        <p class="location-address">212-R, Model Town, Panipat</p>
+                        <a href="https://www.google.com/maps/@29.3910327,76.9636503,17z?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank" rel="noopener noreferrer" aria-label="Open Panipat Clinic location in Google Maps">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                    <div class="footer-location">
+                        <p class="location-name">Safidon Clinic</p>
+                        <p class="location-address">Maa Bhago Devi Hospital, Safidon</p>
+                        <a href="https://www.google.com/maps/search/maa+bhago+devi+hospital+safidon/@29.4025946,76.6555679,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" class="location-link" target="_blank" rel="noopener noreferrer" aria-label="Open Safidon Clinic location in Google Maps">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                            </svg>
+                            <span>Get Directions</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Contact Info -->
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>8708474796</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>goelpulkit101@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>10 AM – 11 PM (7 Days)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Goel's Dental Clinic. All Rights Reserved.</p>
+                <p class="footer-tagline">Designed for advanced dental care in Haryana</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
