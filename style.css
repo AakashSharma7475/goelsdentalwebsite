@@ -234,6 +234,72 @@ body {
     color: var(--primary);
 }
 
+/* Dropdown Menu */
+.nav-dropdown-item {
+    position: relative;
+}
+
+.nav-dropdown-item::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 25px; /* Invisible bridge to prevent mouse-leave */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--white);
+    min-width: 180px;
+    box-shadow: 0 10px 30px rgba(27, 43, 64, 0.1);
+    border-radius: 12px;
+    padding: 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    list-style: none;
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+.nav-dropdown-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-link {
+    display: block;
+    padding: 10px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-link:hover {
+    background: rgba(42, 125, 225, 0.05);
+    color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+    /* Hide location dropdown entirely on mobile */
+    .dropdown-menu {
+        display: none !important;
+    }
+    
+    /* Hide the dropdown arrow on mobile */
+    .nav-dropdown-item > .nav-link svg {
+        display: none;
+    }
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;

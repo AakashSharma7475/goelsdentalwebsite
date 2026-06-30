@@ -242,5 +242,21 @@
     const forms = document.querySelectorAll(".js-appointment-form");
     if (!forms.length) return;
     forms.forEach(bindAppointmentForm);
+
+    // Auto-select location from URL if ?loc=panipat or ?loc=safidon
+    const urlParams = new URLSearchParams(window.location.search);
+    const locParam = urlParams.get("loc");
+    if (locParam) {
+      forms.forEach(form => {
+        const locationSelect = form.querySelector('[name="location"], [name="clinicLocation"]');
+        if (locationSelect) {
+          Array.from(locationSelect.options).forEach(opt => {
+            if (opt.value.toLowerCase().includes(locParam.toLowerCase())) {
+              locationSelect.value = opt.value;
+            }
+          });
+        }
+      });
+    }
   });
 })();
