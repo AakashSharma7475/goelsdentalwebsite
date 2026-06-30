@@ -242,13 +242,29 @@
         const payload = buildPayload(form, result);
         await submitAppointment(payload);
         setStatus(form, "success", "Appointment request sent successfully. We will contact you soon.");
+
+        // Auto-select location from URL if ?loc=panipat or ?loc=safidon
+        const urlParams = new URLSearchParams(window.location.search);
+        const locParam = urlParams.get("loc");
+        if (locParam) {
+          forms.forEach(form => {
+            const locationSelect = form.querySelector('[name="location"], [name="clinicLocation"]');
+            if (locationSelect) {
+              Array.from(locationSelect.options).forEach(opt => {
+                if (opt.value.toLowerCase().includes(locParam.toLowerCase())) {
+                  locationSelect.value = opt.value;
+                }
+              });
+            }
+          });
+        }
         form.reset();
       } catch (error) {
         setStatus(
           form,
           "error",
           error.message ||
-            "Unable to submit right now. Please try again or call the clinic directly."
+          "Unable to submit right now. Please try again or call the clinic directly."
         );
       } finally {
         if (submitButton) {
