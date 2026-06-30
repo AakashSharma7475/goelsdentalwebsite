@@ -1,0 +1,7 @@
+# SMTP credentials — create from config/email.config.example.php on the server
+config/email.config.php
+
+# Rate-limit cache (generated at runtime)
+api/storage/rate-limits/*
+!api/storage/rate-limits/.gitkeep
+!api/storage/rate-limits/.htaccess

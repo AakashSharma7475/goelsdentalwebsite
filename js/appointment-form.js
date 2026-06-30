@@ -1,14 +1,13 @@
 /**
- * Appointment form handling (no-backend via Formspree).
+ * Appointment form handling via Hostinger PHP API (SMTP).
  *
- * IMPORTANT:
- * 1) Create a Formspree form with doctor email: sharmaaakash7475@gmail.com
- * 2) Replace FORMSPREE_ENDPOINT with your real endpoint.
+ * Server endpoint: /api/send-appointment.php
+ * Configure SMTP in config/email.config.php on the server.
  */
 (function () {
   "use strict";
 
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnjwlvqp";
+  const APPOINTMENT_ENDPOINT = "/api/send-appointment.php";
 
   const PHONE_RULES = {
     IN: { min: 10, max: 10 },
@@ -147,11 +146,17 @@
     }
 
     errors.forEach((e) => setFieldError(form, e.field, e.message));
-    return { valid: errors.length === 0, emailValue, phoneDigits, countryCode: countryCode?.value || "" };
+    return {
+      valid: errors.length === 0,
+      emailValue,
+      phoneDigits,
+      countryCode: countryCode?.value || "",
+      country
+    };
   }
 
-  async function submitToFormspree(form, payload) {
-    const response = await fetch(FORMSPREE_ENDPOINT, {
+  async function submitAppointment(payload) {
+    const response = await fetch(APPOINTMENT_ENDPOINT, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -160,29 +165,54 @@
       body: JSON.stringify(payload)
     });
 
-    if (!response.ok) {
-      throw new Error(`Request failed with ${response.status}`);
-    }
-
     const data = await response.json().catch(() => ({}));
-    if (data && data.ok === false) {
-      throw new Error("Form service rejected request.");
+
+    if (!response.ok || data.ok === false) {
+      const message =
+        data.message ||
+        "Unable to submit right now. Please try again or call the clinic directly.";
+      throw new Error(message);
     }
   }
 
   function buildPayload(form, extras) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    const locationField = form.querySelector('[name="location"], [name="clinicLocation"]');
+    const locationName = locationField?.getAttribute("name") || "location";
 
     return {
-      _subject: "New Appointment Request - Goel's Dental Clinic",
-      _replyto: extras.emailValue,
-      ...data,
-      fullPhone: `${extras.countryCode} ${extras.phoneDigits}`.trim()
+      fullName: (data.fullName || "").trim(),
+      email: extras.emailValue,
+      phone: extras.phoneDigits,
+      countryCode: extras.countryCode,
+      country: extras.country,
+      date: data.date || "",
+      timeSlot: data.timeSlot || "",
+      treatment: data.treatment || "",
+      message: (data.message || "").trim(),
+      formType: form.dataset.formType || "website",
+      website: data.website || "",
+      [locationName]: data[locationName] || ""
     };
   }
 
+  function ensureHoneypot(form) {
+    if (form.querySelector('[name="website"]')) return;
+
+    const honeypot = document.createElement("input");
+    honeypot.type = "text";
+    honeypot.name = "website";
+    honeypot.tabIndex = -1;
+    honeypot.autocomplete = "off";
+    honeypot.setAttribute("aria-hidden", "true");
+    honeypot.style.cssText = "position:absolute;left:-9999px;width:1px;height:1px;opacity:0;";
+    form.appendChild(honeypot);
+  }
+
   function bindAppointmentForm(form) {
+    ensureHoneypot(form);
+
     const phoneInput = form.querySelector('[name="phone"]');
     if (phoneInput) {
       phoneInput.addEventListener("input", () => {
@@ -193,15 +223,6 @@
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       setStatus(form, "", "");
-
-      if (FORMSPREE_ENDPOINT.includes("your_form_id")) {
-        setStatus(
-          form,
-          "error",
-          "Form service is not configured yet. Please add your Formspree endpoint in js/appointment-form.js."
-        );
-        return;
-      }
 
       const result = validate(form);
       if (!result.valid) {
@@ -219,14 +240,15 @@
 
       try {
         const payload = buildPayload(form, result);
-        await submitToFormspree(form, payload);
+        await submitAppointment(payload);
         setStatus(form, "success", "Appointment request sent successfully. We will contact you soon.");
         form.reset();
       } catch (error) {
         setStatus(
           form,
           "error",
-          "Unable to submit right now. Please try again or call the clinic directly."
+          error.message ||
+            "Unable to submit right now. Please try again or call the clinic directly."
         );
       } finally {
         if (submitButton) {

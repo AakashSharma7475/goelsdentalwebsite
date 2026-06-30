@@ -1,0 +1,53 @@
+GOEL'S DENTAL CLINIC — HOSTINGER DEPLOYMENT
+============================================
+
+1) UPLOAD FILES
+   Upload the entire project folder contents into public_html on Hostinger:
+   - index.html, about.html, appointment.html, contact.html, etc.
+   - api/
+   - config/
+   - vendor/
+   - js/
+   - style.css
+   - components/
+
+2) CREATE EMAIL CONFIG (REQUIRED)
+   In Hostinger File Manager:
+   a) Open config/email.config.example.php
+   b) Copy it and rename the copy to: config/email.config.php
+   c) Edit config/email.config.php and set:
+      - smtp_password  → your real SMTP password
+      - doctor_email   → inbox that should receive appointments
+      - allowed_origins → your live website URL(s), e.g. https://yourdomain.com
+
+   IMPORTANT: email.config.php is gitignored. Create it only on the server.
+
+3) FOLDER PERMISSIONS
+   Ensure these folders are writable by PHP (755 or 775):
+   - api/storage/rate-limits/
+
+4) TEST
+   a) Open your website appointment form
+   b) Submit a test booking
+   c) Check doctor_email inbox (and spam folder)
+
+5) SECURITY CHECKLIST (already built in)
+   - SMTP password stored server-side only (config/email.config.php)
+   - config/ blocked via .htaccess
+   - api/lib/, api/storage/, vendor/ blocked via .htaccess
+   - Doctor recipient email set in server config (not in HTML form)
+   - Honeypot anti-bot field
+   - Rate limit: 5 submissions per IP per hour
+   - Origin/referer check for allowed domains only
+   - Server-side validation of all fields
+   - Generic error messages (no SMTP details leaked to users)
+
+6) TROUBLESHOOTING
+   - "Email service is not configured" → create config/email.config.php
+   - "Request not allowed" → add your domain to allowed_origins in config
+   - "Too many requests" → wait 1 hour or test from another network
+   - Email not received → check spam; verify GoDaddy SMTP password; confirm port 587 + TLS
+
+7) PASSWORD SECURITY
+   If your SMTP password was ever shared in chat or committed to git, rotate it
+   in your email provider panel before going live.
